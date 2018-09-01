@@ -3,24 +3,22 @@
 <head>
     <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        function UserAction() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("output").innerHTML = this.responseText;
-                }
-            };
-            xhttp.open("GET", "http://localhost:50223/api/currenttime", true);
-            xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send();
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="~/Content/favicon.ico">
 
-        }
-    </script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/cover.css" rel="stylesheet" />
+    <link href="~/Content/home.css" rel="stylesheet" />
 </head>
-<body>
-	@RenderBody()
+<body class="text-center">
+    <div id="loadingDiv" class="loader"></div>
+    @RenderBody()
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/umd/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/home.js"></script>
 </body>
 </html>
