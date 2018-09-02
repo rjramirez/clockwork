@@ -14,7 +14,6 @@
             <h2 class="cover-heading">AWH Clockwork Project @ViewData["Version"] on @ViewData["Runtime"]!</h2>
             <p id="output" class="lead"></p>
             <p class="lead">
-
                 <div class="input-group">
                     <select class="custom-select" id="select_timezone">
                         <option selected value="">Choose Timezone.</option>
@@ -24,11 +23,24 @@
                     </div>
                 </div>
             </p>
+            <table id="clockwork_timetable" class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Client IP</th>
+                        <th scope="col">UTC Time</th>
+                        <th scope="col">Local Time</th>
+                        <th scope="col">Timezone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </main>
     </form>
     <footer class="mastfoot mt-auto">
         <div class="inner">
-            <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, Powered by RJ Ramirez</p>
+            <p>Powered by RJ Ramirez</p>
         </div>
     </footer>
 </div>

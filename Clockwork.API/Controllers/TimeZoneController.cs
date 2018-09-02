@@ -11,11 +11,16 @@ namespace Clockwork.API.Controllers
     public class TimeZoneController : Controller
     {
         // GET api/timezone
-        public IActionResult Get()
+        public JsonResult Get()
         {
-            ReadOnlyCollection<TimeZoneInfo> tz;
-            tz = TimeZoneInfo.GetSystemTimeZones();
-            return Ok(tz.ToList());           
+            using (var db = new ClockworkContext())
+            {
+                ReadOnlyCollection<TimeZoneInfo> tz;
+                tz = TimeZoneInfo.GetSystemTimeZones();
+                var result = new { timeZones = tz.ToList(), timeTable = db.CurrentTimeQueries.ToList() };
+
+                return Json(result);
+            }  
         }
     }
 }
